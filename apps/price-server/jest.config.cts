@@ -15,6 +15,10 @@ module.exports = {
   transform: {
     '^.+\\.[tj]s$': ['@swc/jest', swcJestConfig],
   },
+  // ESM source imports siblings with a .js extension; Jest resolves the .ts file.
+  moduleNameMapper: { '^(\\.{1,2}/.*)\\.js$': '$1' },
+  // cookie (via Fastify's inject) ships only as ESM, so Jest has to transform it.
+  transformIgnorePatterns: ['/node_modules/(?!\\.pnpm/cookie@|cookie/)'],
   moduleFileExtensions: ['ts', 'js', 'html'],
   coverageDirectory: 'test-output/jest/coverage',
 };

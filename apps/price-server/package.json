@@ -67,5 +67,15 @@
       "type:server"
     ]
   },
-  "dependencies": {}
+  "dependencies": {
+    "@fastify/cors": "^11.3.1",
+    "@mw/data": "workspace:*",
+    "fastify": "^5.12.7",
+    "ws": "^8.22.0",
+    "zod": "^4.6.7"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/ws": "^8.18.2"
+  }
 }
